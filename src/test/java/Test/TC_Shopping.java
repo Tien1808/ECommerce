@@ -4,9 +4,11 @@ import Actions.Action;
 import Objects.Users;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.assertTrue;
 
 public class TC_Shopping {
@@ -27,11 +29,13 @@ public class TC_Shopping {
         user = new Users();
         user.setUsername(username);
         user.setPassword(password);
+        Action.Login(driver,username,password);
     }
 
     @Test
     public void TC_Shopping_SearchTool_01() {
+        driver.manage().timeouts().implicitlyWait(1, SECONDS);
+        Action.checkDisplayedControls(driver);
 
-        Action.Login(driver,username,password);
     }
 }
