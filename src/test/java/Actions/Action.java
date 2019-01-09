@@ -12,8 +12,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class Action {
-
-
     public static void Login(WebDriver driver, String username, String password) {
         driver.findElement(By.xpath(Page.btn_Homepage_Login)).click();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -22,6 +20,4 @@ public class Action {
         driver.findElement(By.xpath(Page.btn_LoginPopup_Login)).click();
         driver.findElement(By.xpath(Page.btn_LoginPopup_Login)).click();
     }
-
-
 }

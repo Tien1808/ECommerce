@@ -1,7 +1,10 @@
 package Pages;
 
+import Objects.Product;
+
 public class Page_Shopping_Checkout {
-    public static String btn_BasketPopup_Order = ".//button[@id='order_product']";
-    // Đang suy nghĩ để tìm cách làm.
-    //.//div[@id='view_cart']//child::tr[2]//td[2]
+    // XPath ở đây là dynamic, nên phải có đối tượng.
+    public static String txt_CheckoutPopup_NameProduct(Product product) {
+        return ".//label[text()='" + product.getName() + "']";
+    }
 }
