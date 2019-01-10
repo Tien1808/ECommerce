@@ -7,6 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class Action_Shopping_ManageBasket {
+
+    public static String getNameProductOnHomepage(WebDriver driver) {
+        return driver.findElement(By.xpath(Page_Shopping_ManageBasket.txt_Homepage_NameProduct)).getText();
+    }
     public static void addItemToBasket(WebDriver driver) {
         driver.findElement(By.xpath(Page_Shopping_ManageBasket.btn_Homepage_AddToBasket)).click();
     }
@@ -18,9 +22,9 @@ public class Action_Shopping_ManageBasket {
      * @param driver
      * @return
      */
-    public static String getNameProductOnBasketPopup(WebDriver driver) {
-        return driver.findElement(By.xpath(Page_Shopping_ManageBasket.txt_BasketPopup_NameProduct)).getText();
-    }
+//    public static String getNameProductOnBasketPopup(WebDriver driver) {
+//        return driver.findElement(By.xpath(Page_Shopping_ManageBasket.txt_BasketPopup_NameProduct)).getText();
+//    }
 
     /**
      * Chuyển tới Checkout popup để xác nhận thông tin.
