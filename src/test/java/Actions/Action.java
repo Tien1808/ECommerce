@@ -49,5 +49,11 @@ public class Action {
         }
     }
 
+    public static void CheckKeyWord(WebElement driver, String text){
+        driver.findElement(By.xpath(Page_Shopping_SearchTool.Homepage_Searchbar)).click();
+        driver.findElement(By.xpath(Page_Shopping_SearchTool.SearchTool_SearchBar)).sendKeys(text);
+
+    }
+
 
 }

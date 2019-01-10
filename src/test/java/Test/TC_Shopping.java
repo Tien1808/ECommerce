@@ -33,7 +33,6 @@ public class TC_Shopping {
     public void TC_Shopping_SearchTool_01() throws InterruptedException {
 
         Action.Login(driver,username,password);
-
         Action.CheckDisplaySearchTool(driver);
     }
 }
