@@ -30,8 +30,10 @@ public class TC_Shopping {
     }
 
     @Test
-    public void TC_Shopping_SearchTool_01() {
+    public void TC_Shopping_SearchTool_01() throws InterruptedException {
 
         Action.Login(driver,username,password);
+
+        Action.CheckDisplaySearchTool(driver);
     }
 }
