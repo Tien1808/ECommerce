@@ -5,6 +5,7 @@ import Actions.Action_Shopping_Checkout;
 import Objects.Product;
 import Objects.Users;
 import Pages.Page_Shopping_ManageBasket;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -12,8 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static org.junit.Assert.assertTrue;
 
 public class TC_Shopping {
 
@@ -46,8 +45,13 @@ public class TC_Shopping {
     public void TC_Shopping_Checkout_01() {
         Action.Login(driver, user.getUsername(), user.getPassword());
         // Explicit Wait
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Page_Shopping_ManageBasket.btn_Homepage_AddToBasket)));
         Action_Shopping_Checkout.checkProductsDisplayOnCheckoutPopup(driver, product);
+    }
+
+    @After
+    public void downCrash() {
+        driver.quit();
     }
 }

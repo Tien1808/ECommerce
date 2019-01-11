@@ -16,21 +16,11 @@ public class Action_Shopping_ManageBasket {
     }
 
     /**
-     * Hiện tại chỉ mới lấy tên của một sản phẩm trong giỏ hàng.
-     * Lấy cố định sản phẩm đầu tiên trên homepage
-     * (tạm thời)
-     * @param driver
-     * @return
-     */
-//    public static String getNameProductOnBasketPopup(WebDriver driver) {
-//        return driver.findElement(By.xpath(Page_Shopping_ManageBasket.txt_BasketPopup_NameProduct)).getText();
-//    }
-
-    /**
      * Chuyển tới Checkout popup để xác nhận thông tin.
      * @param driver
      */
     public static void clickOderButton(WebDriver driver) {
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.findElement(By.xpath(Page_Shopping_ManageBasket.btn_BasketPopup_Order)).click();
         WebElement element = driver.findElement(By.xpath(Page_Shopping_ManageBasket.btn_BasketPopup_Order));
         Actions actions = new Actions(driver);
