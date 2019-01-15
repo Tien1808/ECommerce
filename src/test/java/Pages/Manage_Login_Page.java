@@ -7,6 +7,6 @@ public class Manage_Login_Page {
 
     public static String txt_LoginPopup_Password = ".//input[@id='pass_lg']";
 
-    public static String btn_LoginPopup_Login = "//*[@id=\"submit_lg\"]";
+    public static String btn_LoginPopup_Login = "//*[@id='submit_lg']";
 
 }

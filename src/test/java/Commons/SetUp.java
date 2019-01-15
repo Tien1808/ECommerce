@@ -3,7 +3,6 @@ package Commons;
 import Objects.Product;
 import Objects.Users;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -16,9 +15,8 @@ public class SetUp {
     public static Product product= null;
 
     @BeforeMethod
-    public static void setUp() {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", ".\\src\\test\\Resources\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
@@ -29,7 +27,7 @@ public class SetUp {
     }
 
     @AfterMethod
-    public static void downCrash() {
+    public void downCrash() {
         driver.quit();
     }
 }

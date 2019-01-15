@@ -1,7 +1,6 @@
 package Tests.Shopping_TC;
 
 import Actions.Manage_Login_Action;
-import Commons.SetUp;
 import Objects.Product;
 import Objects.Users;
 import org.openqa.selenium.WebDriver;
@@ -9,13 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Shopping_SearchTool_TC {
-    public static WebDriver driver = null;
-    public static String url = "http://103.95.199.151/mobilevn/";
-    public static String username = "123@gmail.com";
-    public static String password = "abcdef";
-    public static Users user = null;
-    public static Product product= null;
+public class TC_Shopping_SearchTool {
+    private static WebDriver driver = null;
+    private static String url = "http://103.95.199.151/mobilevn/";
+    private static String username = "123@gmail.com";
+    private static String password = "abcdef";
+    private static Users user = null;
+    private static Product product= null;
 
     @BeforeMethod
     public static void setUp() {
@@ -35,7 +34,7 @@ public class Shopping_SearchTool_TC {
         Manage_Login_Action.Login(driver, user.getUsername(), user.getPassword());
     }
 
-    public void downCrash() {
-        SetUp.downCrash();
-    }
+    /*public void downCrash() {
+        SetUp.downCrash(driver);
+    }*/
 }
