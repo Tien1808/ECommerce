@@ -1,6 +1,6 @@
 package Pages;
 
-public class Page_Shopping_Login {
+public class Manage_Login_Page {
     public static String btn_Homepage_Login = ".//span[text()=' Đăng Nhập']";
 
     public static String txt_LoginPopup_Username = ".//input[@id='e_p_lg']";
