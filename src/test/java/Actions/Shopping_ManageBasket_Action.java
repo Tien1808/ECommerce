@@ -40,7 +40,7 @@ public class Shopping_ManageBasket_Action {
     // Nút này hiển thị ở phía dưới của mỗi cardview.
     public static void clickAddToBasketButton(WebDriver driver, String Productname) {
 
-        WebElement ProductAddCartBtn = driver.findElement(By.xpath(".//div[@class='products-content-label' and contains(.,'" + Productname + "')]/button[@class='btn btn-danger cart_class']"));
+        WebElement ProductAddCartBtn = driver.findElement(By.xpath(".//div[@class='products-content-label' and contains(.,'" +Productname+ "')]/button[@class='btn btn-danger cart_class']"));
         ProductAddCartBtn.click();
     }
 
@@ -89,29 +89,33 @@ public class Shopping_ManageBasket_Action {
         WebElement unitPrice = driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_BasketPopup_UnitPrice));
         WebElement estimatedSubtotal = driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_BasketPopup_EstimatedSubtotal));
 
-        String EstimatedSubtotal = estimatedSubtotal.getText();
+        String Discoutn = discount.getAttribute("textContent") ;
+        NumberFormat format1 = NumberFormat.getPercentInstance();
+        Number a = format1.parse(Discoutn);
+        String UnitPrice = unitPrice.getAttribute("textContent");
+        NumberFormat format2 = NumberFormat.getNumberInstance();
+        Number b = format2.parse(UnitPrice);
+        String EstimatedSubtotal = estimatedSubtotal.getAttribute("textContent");
+        Number c = format2.parse(EstimatedSubtotal);
 
-        String Discoutn = discount. getAttribute("textContent") ;
-        NumberFormat format = NumberFormat.getCurrencyInstance();
-        //Number a = format.parse(Discoutn);
-        String UnitPrice = unitPrice. getAttribute("textContent");
-        Number b = format.parse(UnitPrice);
+        double A = Double.parseDouble(String.valueOf(a));
 
-        //System.out.println(a.toString());
-        System.out.println(b.toString());
-/**
-        long a = Integer.parseInt(Discoutn);
-        int b = Integer.parseInt(UnitPrice);
+        int B = Integer.parseInt(String.valueOf(b));
+        int C = Integer.parseInt(String.valueOf(c));
 
-        int Check = (int) (a*b);
-
-        String check = String.valueOf(Check);
-
-        if (EstimatedSubtotal.toLowerCase().contains(check)){
-            System.out.println("Passed");
+        double Check = B-(A*(B*1.0));
+        int SubPriceWithDiscount = (int) Check;
+        if (A > 0){
+            if (C == SubPriceWithDiscount){
+                System.out.println("TC_Shopping_ManageBasket_06: Passed Total Price = "+SubPriceWithDiscount+"đ");
+            }else {
+                System.out.printf("TC_Shopping_ManageBasket_06 (Discount): Failed");
+            }
+        }else if (B == C){
+            System.out.println("TC_Shopping_ManageBasket_06: Passed Total Price = "+C+"đ");
         }else {
-            System.out.printf("failed");
-        }*/
+            System.out.printf("TC_Shopping_ManageBasket_06: Failed");
+        }
 
     }
 
