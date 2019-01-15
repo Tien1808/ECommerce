@@ -22,10 +22,11 @@ public class Shopping_Checkout_Action {
     /**
      * So sánh tên sản phẩm trên Basket popup với tên sản phẩm ở trên
      * Checkout popup có giống nhau không?
-     * @param driver
+     * @param driver driver
      * @param product dùng để lấy tên sản phẩm
      */
-    public static void checkProductsDisplayOnCheckoutPopup(WebDriver driver, Product product) throws InterruptedException {
+    public static void checkProductsDisplayOnCheckoutPopup(WebDriver driver, Product product) {
+        Shopping_ManageBasket_Action.clickAddToBasketButton(driver);
         // Lấy tên sản phẩm ở Basket popup.
         // expected = name product on Basket popup
         // String expected = Shopping_ManageBasket_Actio.getNameProductOnBasketPopup(driver);
@@ -34,12 +35,12 @@ public class Shopping_Checkout_Action {
         // Gán cái tên sản phẩm mới lấy được ở Basket popup vào đối tượng product.
         product.setName(expected);
         // Chuyển qua Checkout popup
-        Shopping_ManageBasket_Action.clickOderButton(driver);
+        Shopping_ManageBasket_Action.clickOderNowButton(driver);
         // actual = name product on Checkout popup
         //String actual = getNameProductOnCheckoutPopup(driver, product);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)));
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         String actual = getNameProductOnCheckoutPopup(driver);
         System.out.println("Actual: " + actual);
         try {
@@ -48,5 +49,9 @@ public class Shopping_Checkout_Action {
         } catch (AssertionError assertionError) {
             assertionError.printStackTrace();
         }
+    }
+
+    public static void clickCancelButtonOnCheckoutPopup(WebDriver driver) {
+        driver.findElement(By.xpath(Shopping_Checkout_Page.btn_Checkout_Cancel)).click();
     }
 }

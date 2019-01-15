@@ -6,7 +6,6 @@ import Commons.SetUp;
 import Objects.Product;
 import Objects.Users;
 import Pages.Shopping_ManageBasket_Page;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +15,7 @@ import org.testng.annotations.Test;
 
 import java.text.ParseException;
 
-public class Shopping_ManageBasket_TC {
+public class TC_Shopping_ManageBasket {
     public static WebDriver driver=null;
     public static String url = "http://103.95.199.151/mobilevn/";
     public static String username = "123@gmail.com";

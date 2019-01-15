@@ -37,6 +37,16 @@ public class Shopping_ManageBasket_Action {
         return driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)).getText();
     }
 
+    public static String getTitleOnBasketPopup(WebDriver driver) {
+        return driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_BasketPopup_Title)).getText();
+    }
+
+    public static String getNameProductOnBasketPopup(WebDriver driver, String nameProduct) {
+        String actual = driver.findElement(By.xpath(Shopping_ManageBasket_Page.getXPathOfNameProductOnBasketPopup(nameProduct))).getAttribute(nameProduct);
+        System.out.println("Kết quả =" + actual);
+        return actual;
+    }
+
     // Nút này hiển thị ở phía dưới của mỗi cardview.
     public static void clickAddToBasketButton(WebDriver driver, String Productname) {
 
@@ -46,15 +56,14 @@ public class Shopping_ManageBasket_Action {
 
     /**
      * Chuyển tới Checkout popup để xác nhận thông tin.
-     *
-     * @param driver
+     * @param driver Driver.
      */
-    public static void clickOderButton(WebDriver driver) {
+    public static void clickOderNowButton(WebDriver driver) {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_BasketPopup_Order)).click();
-        WebElement element = driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_BasketPopup_Order));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).click().build().perform();
+        driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_BasketPopup_OrderNow)).click();
+//        WebElement element = driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_BasketPopup_Order));
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(element).click().build().perform();
     }
 
     public static void CheckEmptyBasket(WebDriver driver) {

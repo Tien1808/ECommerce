@@ -11,6 +11,7 @@ public class Shopping_ManageBasket_Page {
     // Tên của sản phẩm trên trang chủ.
     public static String txt_Homepage_NameProduct = ".//a[@href='product_details.php?pid=3']//child::p";
 
+    public static String btn_BasketPopup_OrderNow = ".//button[@id='order_product']";
     public static String txt_BasketPopup_Title = ".//div[@id='cart_modal']//h4[@class='modal-title']";
 
     public static String txt_BasketPopup_Empty = ".//div[@id='view_cart']//div[@class='col-md-12 text-center text-danger']//h1";
@@ -33,4 +34,8 @@ public class Shopping_ManageBasket_Page {
     // Tạm thời để cái này ở đây vì chưa rõ nó thuộc phần nào.
     // Cái này là để thêm sản phẩm vào giỏ hàng trên homepage.
     public static String btn_Homepage_AddToBasket = ".//a[@href='product_details.php?pid=3']//following-sibling::button//span";
+
+    public static String getXPathOfNameProductOnBasketPopup(String nameProduct) {
+        return ".//div[@id='view_cart']//td[text()='" + nameProduct + "']";
+    }
 }

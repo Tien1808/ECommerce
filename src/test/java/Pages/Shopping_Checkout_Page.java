@@ -8,4 +8,6 @@ public class Shopping_Checkout_Page {
     //    return ".//label[text()='" + nameProduct + "']";
     //}
     public static String txt_CheckoutPopup_NameProduct = ".//label[text()='samsung']";
+
+    public static String btn_Checkout_Cancel = ".//button[@id='cancel_order']";
 }
