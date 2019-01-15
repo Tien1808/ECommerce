@@ -53,7 +53,7 @@ public class TC_Shopping_ManageBasket {
     @Test
     public void TC_Shopping_ManageBasket_06() throws ParseException {
 
-        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver, "iphone 4");
+        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver,);
         //Shopping_ManageBasket_Action.clickBuyAnotherButton(SetUp.driver);
         Shopping_ManageBasket_Action.CheckTotalPrice(SetUp.driver);
     }
