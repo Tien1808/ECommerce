@@ -1,6 +1,9 @@
 package Pages;
 
 public class Home_Page {
+    // Cái này là để thêm sản phẩm vào giỏ hàng trên homepage.
+    public static String btn_Homepage_AddToBasket = ".//a[@href='product_details.php?pid=3']//following-sibling::button//span";
+
     // chọn 1 sản phẩm có tên là iphone 6 ở top bán chạy
     // public static String cardView_Homepage_Product = ".//label[text()='Top bán chạy nhất:']/following::div[@class='col-xs-6 col-sm-4 col-md-2']//p[text()='iphone 6']";
 
@@ -25,4 +28,6 @@ public class Home_Page {
         // If don't have required xpath then get this default xpath.
         return ".//label[text()='Top bán chạy nhất:']/following::div[@class='col-xs-6 col-sm-4 col-md-2']//p[text()='iphone 6']";
     }
+
+    public static String txt_Homepage_NameProduct = ".//a[@href='product_details.php?pid=3']//child::p";
 }
