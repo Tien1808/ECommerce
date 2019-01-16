@@ -12,11 +12,12 @@ public class SetUp {
     public static String username = "123@gmail.com";
     public static String password = "abcdef";
     public static String keyword = "htc";
+    public static String productName = "iphone 6";
     public static Users user = null;
     public static Product product= null;
 
     @BeforeMethod
-    public void setUp() {
+    public static void setUp() {
         System.setProperty("webdriver.chrome.driver", ".\\src\\test\\Resources\\drivers\\chromedriver.exe");
         driver.get(url);
         driver.manage().window().maximize();
@@ -25,11 +26,12 @@ public class SetUp {
         user.setUsername(username);
         user.setPassword(password);
         user.setKeyword(keyword);
+        product.setName(productName);
         product = new Product();
     }
 
     @AfterMethod
-    public void downCrash() {
+    public static void downCrash() {
         driver.quit();
     }
 

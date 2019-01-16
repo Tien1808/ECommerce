@@ -52,6 +52,7 @@ public class Shopping_ManageBasket_Action {
 
         WebElement ProductAddCartBtn = driver.findElement(By.xpath(".//div[@class='products-content-label' and contains(.,'" +Productname+ "')]/button[@class='btn btn-danger cart_class']"));
         ProductAddCartBtn.click();
+        ProductAddCartBtn.in
     }
 
     /**

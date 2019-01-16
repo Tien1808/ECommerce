@@ -1,5 +1,6 @@
 package Actions;
 
+import Commons.SetUp;
 import Objects.Product;
 import Pages.Shopping_ManageBasket_Page;
 import Pages.Shopping_Checkout_Page;
@@ -25,8 +26,9 @@ public class Shopping_Checkout_Action {
      * @param driver driver
      * @param product dùng để lấy tên sản phẩm
      */
-    public static void checkProductsDisplayOnCheckoutPopup(WebDriver driver, Product product) {
-        Shopping_ManageBasket_Action.clickAddToBasketButton(driver);
+    /**
+    public static void checkProductsDisplayOnCheckoutPopup(WebDriver driver, String product) {
+        Shopping_ManageBasket_Action.clickAddToBasketButton(driver, product);
         // Lấy tên sản phẩm ở Basket popup.
         // expected = name product on Basket popup
         // String expected = Shopping_ManageBasket_Actio.getNameProductOnBasketPopup(driver);
@@ -49,7 +51,7 @@ public class Shopping_Checkout_Action {
         } catch (AssertionError assertionError) {
             assertionError.printStackTrace();
         }
-    }
+    }*/
 
     public static void clickCancelButtonOnCheckoutPopup(WebDriver driver) {
         driver.findElement(By.xpath(Shopping_Checkout_Page.btn_Checkout_Cancel)).click();
