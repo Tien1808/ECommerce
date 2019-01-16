@@ -7,13 +7,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class SetUp {
-    private static WebDriver driver = null;
-    private static String url = "http://103.95.199.151/mobilevn/";
-    private static String username = "123@gmail.com";
-    private static String password = "abcdef";
-    private static String keyword = "htc";
-    private static Users user = null;
-    private static Product product= null;
+    public static WebDriver driver = null;
+    public static String url = "http://103.95.199.151/mobilevn/";
+    public static String username = "123@gmail.com";
+    public static String password = "abcdef";
+    public static String keyword = "htc";
+    public static Users user = null;
+    public static Product product= null;
 
     // Em có ý định sẽ dời những biến có liên quan ở phía trên
     // vô các hàm ở phía dưới. Ví dụ: setUp() thành setUp(Webdriver...)
