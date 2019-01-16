@@ -4,8 +4,8 @@ import Actions.Manage_Login_Action;
 import Actions.Shopping_ManageBasket_Action;
 import Commons.SetUp;
 import Objects.Product;
-import Objects.Users;
-import Pages.Shopping_ManageBasket_Page;
+import Objects.User;
+import Pages.Home_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +20,7 @@ public class TC_Shopping_ManageBasket {
     public static String url = "http://103.95.199.151/mobilevn/";
     public static String username = "123@gmail.com";
     public static String password = "abcdef";
-    public static Users user = null;
+    public static User user = null;
     public static Product product= null;
 
 
@@ -34,7 +34,7 @@ public class TC_Shopping_ManageBasket {
         Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
 
         WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
         Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp.driver);
         // Basket popup is displayed Verification point.
         Shopping_ManageBasket_Action.CheckBasketPopupDisplay(SetUp.driver);
@@ -45,7 +45,7 @@ public class TC_Shopping_ManageBasket {
         Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
 
         WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
         Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp.driver);
         Shopping_ManageBasket_Action.CheckEmptyBasket(SetUp.driver);
     }
@@ -53,7 +53,7 @@ public class TC_Shopping_ManageBasket {
     @Test
     public void TC_Shopping_ManageBasket_06() throws ParseException {
 
-        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver,);
+        //Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver,);
         //Shopping_ManageBasket_Action.clickBuyAnotherButton(SetUp.driver);
         Shopping_ManageBasket_Action.CheckTotalPrice(SetUp.driver);
     }
