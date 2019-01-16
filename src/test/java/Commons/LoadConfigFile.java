@@ -1,14 +1,8 @@
 package Commons;
 
-
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
 class LoadConfigFile {
-    static Properties prop;
-    /*BufferedReader reader;
+    /*static Properties prop;
+    BufferedReader reader;
     public  Properties loadPropertiesFile(String propertyFilePath) throws FileNotFoundException {
 
         reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -34,16 +28,4 @@ class LoadConfigFile {
         }
         return prop;
     }*/
-
-    static void loadPropertiesFile() {
-        // Use to store key/value pairs.
-        prop = new Properties();
-        try {
-            // Use to get key/value pairs in Properties object
-            // following propertyFilePath stream.
-            prop.load(new FileInputStream("./src/test/Resources/Configs/Config.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
