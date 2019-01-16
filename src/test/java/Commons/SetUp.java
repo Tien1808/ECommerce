@@ -1,7 +1,7 @@
 package Commons;
 
 import Objects.Product;
-import Objects.Users;
+import Objects.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +14,6 @@ public class SetUp {
     public static String keyword = "htc";
     public static User user = null;
     public static String productName = "iphone 6";
-    public static Users user = null;
     public static Product product= null;
 
     // Em có ý định sẽ dời những biến có liên quan ở phía trên
