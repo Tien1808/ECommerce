@@ -5,6 +5,7 @@ import Actions.Shopping_ManageBasket_Action;
 import Commons.SetUp;
 import Objects.Product;
 import Objects.Users;
+import Pages.Home_Page;
 import Pages.Shopping_ManageBasket_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +35,7 @@ public class TC_Shopping_ManageBasket {
         Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
 
         WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
         Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp.driver);
         // Basket popup is displayed Verification point.
         Shopping_ManageBasket_Action.CheckBasketPopupDisplay(SetUp.driver);
@@ -45,7 +46,7 @@ public class TC_Shopping_ManageBasket {
         Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
 
         WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
         Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp.driver);
         Shopping_ManageBasket_Action.CheckEmptyBasket(SetUp.driver);
     }
@@ -53,7 +54,7 @@ public class TC_Shopping_ManageBasket {
     @Test
     public void TC_Shopping_ManageBasket_06() throws ParseException {
 
-        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver,);
+        //Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp.driver,);
         //Shopping_ManageBasket_Action.clickBuyAnotherButton(SetUp.driver);
         Shopping_ManageBasket_Action.CheckTotalPrice(SetUp.driver);
     }
