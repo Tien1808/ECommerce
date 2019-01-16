@@ -1,7 +1,7 @@
 package Commons;
 
 import Objects.Product;
-import Objects.Users;
+import Objects.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +12,7 @@ public class SetUp {
     public static String username = "123@gmail.com";
     public static String password = "abcdef";
     public static String keyword = "htc";
-    public static Users user = null;
+    public static User user = null;
     public static Product product= null;
 
     // Em có ý định sẽ dời những biến có liên quan ở phía trên
@@ -27,7 +27,7 @@ public class SetUp {
         driver.get(url);
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
-        user = new Users();
+        user = new User();
         user.setUsername(username);
         user.setPassword(password);
         user.setKeyword(keyword);
