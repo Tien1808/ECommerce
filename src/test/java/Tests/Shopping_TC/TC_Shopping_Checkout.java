@@ -5,6 +5,7 @@ import Commons.SetUp_AlphaVersion;
 import Pages.Home_Page;
 import Pages.Shopping_Checkout_Page;
 import Pages.Shopping_ManageBasket_Page;
+import Pages.Shopping_OderSuccess_Page;
 import Tests.TC_Login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -35,10 +36,34 @@ public class TC_Shopping_Checkout extends SetUp_AlphaVersion {
 
         Shopping_ManageBasket_Action.clickOderNowButton(SetUp_AlphaVersion.driver);
 
-        wait.until(ExpectedConditions.visibilityOf(SetUp_AlphaVersion.driver.findElement(By.xpath(Shopping_Checkout_Page.btn_Checkout_Cancel))));
+        wait.until(ExpectedConditions.visibilityOf(SetUp_AlphaVersion.driver.findElement(By.xpath(Shopping_Checkout_Page.btn_CheckoutPopup_Cancel))));
         String actual = Shopping_Checkout_Action.getNameProductOnCheckoutPopup(SetUp_AlphaVersion.driver, initializeProduct().getName());
 
         // Verification point.
+        verificationPoint(actual, expected, prop.getProperty("txt_Popular_TheTwoValueAreDifference"));
+    }
+
+    @Test
+    public void TC_ShoppingCheckout_04() {
+        login.TC_Manage_Login_06();
+
+        // Must wait least 3 or 4 time to load expected condition.
+        WebDriverWait wait = new WebDriverWait(driver, 4);
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.getXPathOfAProductOnHomepage(prop.getProperty("txt_ShoppingCheckout_FeaturedProduct"), initializeProduct().getName()))));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.getXPathOfAProductOnHomepage("Sản phẩm nỗi bật", initializeProduct().getName()))));
+
+        // Home_Action.clickAnItemOnHomepage(SetUp_AlphaVersion.driver, prop.getProperty("txt_ShoppingCheckout_FeaturedProduct"), initializeProduct().getName());
+        Home_Action.clickAnItemOnHomepage(SetUp_AlphaVersion.driver, "Sản phẩm nỗi bật", initializeProduct().getName());
+        Shopping_ProductDetail_Action.clickAddToBasketButtonOnProductDetailPopup(SetUp_AlphaVersion.driver);
+
+        Shopping_ManageBasket_Action.clickOderNowButton(SetUp_AlphaVersion.driver);
+        Shopping_Checkout_Action.enterPassword(driver, initializeUser().getPassword());
+
+        Shopping_Checkout_Action.clickCheckoutButton(driver);
+        String expected = prop.getProperty("txt_TCShoppingOrderSuccess_04_Expectation");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_OderSuccess_Page.txt_OderSuccessPopup_Title)));
+        String actual = Shopping_OrderSuccess_Action.getTitle(driver);
+
         verificationPoint(actual, expected, prop.getProperty("txt_Popular_TheTwoValueAreDifference"));
     }
 
@@ -55,10 +80,10 @@ public class TC_Shopping_Checkout extends SetUp_AlphaVersion {
         Shopping_ProductDetail_Action.clickAddToBasketButtonOnProductDetailPopup(driver);
         Shopping_ManageBasket_Action.clickOderNowButton(driver);
 
-        WebElement abc1 = driver.findElement(By.xpath(Shopping_Checkout_Page.btn_Checkout_Cancel));
+        WebElement abc1 = driver.findElement(By.xpath(Shopping_Checkout_Page.btn_CheckoutPopup_Cancel));
         wait.until(ExpectedConditions.visibilityOf(abc1));
 
-        Shopping_Checkout_Action.clickCancelButtonOnCheckoutPopup(driver);
+        Shopping_Checkout_Action.clickCancelButton(driver);
 
         WebElement waitForElementDisplay = driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_BasketPopup_OrderNow));
         wait.until(ExpectedConditions.visibilityOf(waitForElementDisplay));
