@@ -1,6 +1,8 @@
 package Pages;
 
 public class Home_Page {
+    public static String btn_Homepage_ShoppingCart = ".//span[text()='Giỏ Hàng']";
+
     // Cái này là để thêm sản phẩm vào giỏ hàng trên homepage.
     public static String btn_Homepage_AddToBasket = ".//a[@href='product_details.php?pid=3']//following-sibling::button//span";
 

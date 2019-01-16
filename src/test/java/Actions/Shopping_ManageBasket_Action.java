@@ -1,10 +1,10 @@
 package Actions;
 
+import Pages.Home_Page;
 import Pages.Shopping_ManageBasket_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -14,7 +14,7 @@ public class Shopping_ManageBasket_Action {
 
     public static void clickAddShoppingCartButton(WebDriver driver) {
         // driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Shopping_ManageBasket_Page.btn_Homepage_ShoppingCart)).click();
+        driver.findElement(By.xpath(Home_Page.btn_Homepage_ShoppingCart)).click();
     }
 
     public static void clickBuyAnotherButton(WebDriver driver){
@@ -26,6 +26,10 @@ public class Shopping_ManageBasket_Action {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         WebElement BasketPopupTitle = driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_BasketPopup_Title));
         boolean Check = BasketPopupTitle.isEnabled();
+        // Anh, chỗ ni mình có thể chuyển từ 'Check == true'
+        // thành 'Check'. Vì em thấy cái vạch màu vàng ở bên
+        // cạnh gợi ý như vậy. Vì đơn giản ý em là sửa lại
+        // cho nó hết màu vàng bên cạnh nhìn cho nó đẹp ý mà!!!
         if (Check == true) {
             System.out.printf("TC_Shopping_ManageBasket_01: Pass. Basket pop up is displayed");
         } else {
@@ -34,7 +38,7 @@ public class Shopping_ManageBasket_Action {
     }
 
     public static String getNameProductOnHomepage(WebDriver driver) {
-        return driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_Homepage_NameProduct)).getText();
+        return driver.findElement(By.xpath(Home_Page.txt_Homepage_NameProduct)).getText();
     }
 
     public static String getTitleOnBasketPopup(WebDriver driver) {
@@ -42,9 +46,7 @@ public class Shopping_ManageBasket_Action {
     }
 
     public static String getNameProductOnBasketPopup(WebDriver driver, String nameProduct) {
-        String actual = driver.findElement(By.xpath(Shopping_ManageBasket_Page.getXPathOfNameProductOnBasketPopup(nameProduct))).getAttribute(nameProduct);
-        System.out.println("Kết quả =" + actual);
-        return actual;
+        return driver.findElement(By.xpath(Shopping_ManageBasket_Page.getXPathOfNameProductOnBasketPopup(nameProduct))).getText();
     }
 
     // Nút này hiển thị ở phía dưới của mỗi cardview.
