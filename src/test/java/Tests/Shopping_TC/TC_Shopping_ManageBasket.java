@@ -4,9 +4,8 @@ import Actions.Manage_Login_Action;
 import Actions.Shopping_ManageBasket_Action;
 import Commons.SetUp;
 import Objects.Product;
-import Objects.Users;
+import Objects.User;
 import Pages.Home_Page;
-import Pages.Shopping_ManageBasket_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +20,7 @@ public class TC_Shopping_ManageBasket {
     public static String url = "http://103.95.199.151/mobilevn/";
     public static String username = "123@gmail.com";
     public static String password = "abcdef";
-    public static Users user = null;
+    public static User user = null;
     public static Product product= null;
 
 

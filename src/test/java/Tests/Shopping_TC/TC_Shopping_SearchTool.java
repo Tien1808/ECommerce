@@ -4,25 +4,21 @@ import Actions.Shopping_Search_Action;
 import Commons.SetUp;
 
 import Objects.Product;
-import Objects.Users;
-import Pages.Shopping_ManageBasket_Page;
+import Objects.User;
 import Pages.Shopping_SearchTool_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 public class TC_Shopping_SearchTool {
     private static WebDriver driver = null;
     private static String url = "http://103.95.199.151/mobilevn/";
     private static String username = "123@gmail.com";
     private static String password = "abcdef";
-    private static Users user = null;
+    private static User user = null;
     private static Product product= null;
 
     @BeforeMethod
