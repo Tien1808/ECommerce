@@ -37,9 +37,6 @@ public class Shopping_ManageBasket_Action {
         }
     }
 
-    public static String getNameProductOnHomepage(WebDriver driver) {
-        return driver.findElement(By.xpath(Home_Page.txt_Homepage_NameProduct)).getText();
-    }
 
     public static String getTitleOnBasketPopup(WebDriver driver) {
         return driver.findElement(By.xpath(Shopping_ManageBasket_Page.txt_BasketPopup_Title)).getText();
