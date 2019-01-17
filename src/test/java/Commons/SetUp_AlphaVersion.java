@@ -58,10 +58,10 @@ public class SetUp_AlphaVersion {
     /**
      * End the activity and auto close the website.
      */
-    @AfterMethod
-    public static void tearDown() {
-        driver.quit();
-    }
+    //@AfterMethod
+    //public static void tearDown() {
+      //  driver.quit();
+    //}
 
     /**
      * Verify that current testcase is passed or failed.
@@ -71,6 +71,7 @@ public class SetUp_AlphaVersion {
      * @param expected expected result.
      * @param errorMessage error message will be show if testcase is failed.
      */
+    /**
     protected static void verificationPoint(Object actual, Object expected, String errorMessage) {
         try {
             assertEquals(actual, expected, errorMessage);
@@ -78,5 +79,5 @@ public class SetUp_AlphaVersion {
         } catch (AssertionError assertionError) {
             assertionError.printStackTrace();
         }
-    }
+    } */
 }
