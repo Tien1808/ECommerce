@@ -9,7 +9,7 @@ public class Shopping_ManageBasket_Page {
     public static String btn_BasketPopup_Order_Disable = ".//button[@class='btn btn-danger btn-block btn-lg disabled' and contains(.,'Đặt hàng ngay')]";
 
     public static String txt_BasketPopup_NameProduct = ".//div[@id='view_cart']//child::tbody//tr[1]//td[2]";
-    public static String btn_BasketPopup_Order = ".//button[@id='order_product']";
+
 
     public static String btn_BasketPopup_LoginLink = ".//a[text()='Click vào đây để đăng nhập']";
 
