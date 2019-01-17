@@ -18,7 +18,7 @@ public class SetUp_AlphaVersion {
     protected static Properties prop;
     private static StringBuffer stringBuffer = new StringBuffer();
 
-    public static String convertStringIntoNumbers(String price) {
+    protected static String convertStringIntoNumbers(String price) {
         char[] c = price.toCharArray();
         for (char c1 : c) {
             // Check c1 in c array is a number?
@@ -27,7 +27,7 @@ public class SetUp_AlphaVersion {
                 stringBuffer.append(c1);
             }
         }
-        if(stringBuffer.toString().equals("")) {
+        if(!stringBuffer.toString().equals("")) {
             return stringBuffer.toString();
         }
         return "Price value is invalid!!!";
