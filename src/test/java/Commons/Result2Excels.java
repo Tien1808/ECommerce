@@ -29,7 +29,7 @@ public class Result2Excels {
         File f = new File(path_of_File);
         if (f.exists())
         {
-             fis = new FileInputStream(path_of_File);
+            fis = new FileInputStream(path_of_File);
             workbook = new XSSFWorkbook(fis);
             sheet = workbook.getSheet(Sheet_Name);
             // get last row number
@@ -62,10 +62,10 @@ public class Result2Excels {
             }
         }
 
-            Row row = sheet.createRow(rowNum++);
-            row.createCell(0).setCellValue(TC_ID);
-            row.createCell(1).setCellValue(TC_Summary);
-            row.createCell(2).setCellValue(TC_Result);
+        Row row = sheet.createRow(rowNum++);
+        row.createCell(0).setCellValue(TC_ID);
+        row.createCell(1).setCellValue(TC_Summary);
+        row.createCell(2).setCellValue(TC_Result);
 
 
         // Resize all columns to fit the content size
