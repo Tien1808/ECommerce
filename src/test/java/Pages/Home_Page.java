@@ -12,17 +12,17 @@ public class Home_Page {
     /**
      * This method help user chooses a product in selected
      * categories and navigates to Product Detail page.
-     * @param category Chọn và nhập một trong hai chuỗi:
+     * @param criteria Chọn và nhập một trong hai chuỗi:
      *                 'Top bán chạy nhất' hoặc 'Sản phẩm nỗi bật'.
      * @param nameProduct Truyền vào tên sản phẩm: Product.getName()
      * @return Return a xpath.
      */
-    public static String getXPathOfAProductOnHomepage(String category, String nameProduct) {
+    public static String getXPathOfAProductOnHomepage(String criteria, String nameProduct) {
         try {
-            if (category.equals("Top bán chạy nhất")) {
-                return ".//label[text()='" + category + ":']//following::div[@class='col-xs-6 col-sm-4 col-md-2']//p[text()='" + nameProduct + "']";
+            if (criteria.equals("Top bán chạy nhất")) {
+                return ".//label[text()='" + criteria + ":']//following::div[@class='col-xs-6 col-sm-4 col-md-2']//p[text()='" + nameProduct + "']";
             } else {
-                return ".//label[text()='" + category + ":']/following::div[@class='col-xs-6 col-sm-4 col-md-3']//p[text()='" + nameProduct + "']";
+                return ".//label[text()='" + criteria + ":']/following::div[@class='col-xs-6 col-sm-4 col-md-3']//p[text()='" + nameProduct + "']";
             }
         } catch (Exception e) {
             e.printStackTrace();
