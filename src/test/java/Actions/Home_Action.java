@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class Home_Action {
 
+    public static String getNameProductOnHomepage(WebDriver driver) {
+        return driver.findElement(By.xpath(Home_Page.txt_Homepage_NameProduct)).getText();
+    }
+
     /**
      * Click an item with the name selected in the category
      * selected and navigates to Product Detail page.
