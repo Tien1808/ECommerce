@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.text.ParseException;
+import java.util.concurrent.TimeUnit;
 
 public class TC_Shopping_ManageBasket extends SetUp_AlphaVersion {
 
@@ -22,35 +23,36 @@ public class TC_Shopping_ManageBasket extends SetUp_AlphaVersion {
     public void TC_Shopping_ManageBasket_01() {
        // Manage_Login_Action.Login(driver, user.getUsername(),user.getPassword());
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(SetUp_AlphaVersion.driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
-        Shopping_ManageBasket_Action.clickAddShoppingCartButton(driver);
+        Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp_AlphaVersion.driver);
         // Basket popup is displayed Verification point.
-        Shopping_ManageBasket_Action.CheckBasketPopupDisplay(driver);
+        Shopping_ManageBasket_Action.CheckBasketPopupDisplay(SetUp_AlphaVersion.driver);
     }
 
     @Test
     public void TC_Shopping_ManageBasket_02_03(){
-        Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
+        Manage_Login_Action.Login(SetUp_AlphaVersion.driver, initializeUser().getUsername(), initializeUser().getPassword());
 
-        WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
+        WebDriverWait wait = new WebDriverWait(SetUp_AlphaVersion.driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Home_Page.txt_Homepage_NameProduct)));
-        Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp.driver);
-        Shopping_ManageBasket_Action.CheckEmptyBasket(SetUp.driver);
+        Shopping_ManageBasket_Action.clickAddShoppingCartButton(SetUp_AlphaVersion.driver);
+        Shopping_ManageBasket_Action.CheckEmptyBasket(SetUp_AlphaVersion.driver);
     }
 
     @Test
-    public void TC_Shopping_ManageBasket_06() throws ParseException {
+    public void TC_Shopping_ManageBasket_06() throws ParseException, InterruptedException {
 
-        Shopping_ManageBasket_Action.clickAddToBasketButton(driver,"Nokia Lumia 670");
-        Shopping_ManageBasket_Action.clickBuyAnotherButton(driver);
-        Shopping_ManageBasket_Action.clickAddToBasketButton(driver,"Zend fone 4");
-        Shopping_ManageBasket_Action.clickBuyAnotherButton(driver);
-        Shopping_ManageBasket_Action.CheckTotalPrice(driver);
+        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp_AlphaVersion.driver,"Zend fone 5C");
+        Shopping_ManageBasket_Action.clickBuyAnotherButton(SetUp_AlphaVersion.driver);
+
+        Shopping_ManageBasket_Action.clickAddToBasketButton(SetUp_AlphaVersion.driver,"Zend fone 4");
+        //Shopping_ManageBasket_Action.clickBuyAnotherButton(SetUp_AlphaVersion.driver);
+        Shopping_ManageBasket_Action.CheckTotalPrice(SetUp_AlphaVersion.driver);
     }
 
 
-    public void downCrash() {
-        SetUp.downCrash();
-    }
+   // public void downCrash() {
+     //   SetUp.downCrash();
+  //  }
 }
