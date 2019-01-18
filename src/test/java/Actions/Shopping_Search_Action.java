@@ -19,7 +19,7 @@ public class Shopping_Search_Action {
          Actions actions = new Actions(driver);
          actions.moveToElement(element).click().perform();*/
 
-        driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         driver.findElement(By.xpath(Shopping_SearchTool_Page.txt_Homepage_Searchbar)).click();
     }
     public static void CheckDisplaySearchTool(WebDriver driver){

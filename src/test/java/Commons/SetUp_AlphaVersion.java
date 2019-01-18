@@ -3,13 +3,13 @@ package Commons;
 import Objects.Product;
 import Objects.User;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
@@ -38,9 +38,9 @@ public class SetUp_AlphaVersion {
         loadPropertiesFile();
 
         // getProperty() method to retrieve the value from the configuration file.
-        System.setProperty(prop.getProperty("txt_SetUp_ChromeDriver"),
-                prop.getProperty("txt_SetUp_ChromeDriverPath"));
-        driver = new ChromeDriver();
+        System.setProperty(prop.getProperty("EdgeDriver"),prop.getProperty("EdgeDriver_Path"));
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(prop.getProperty("AppUrl"));
 
         // Enlarge screen to the system can focus on better element.
@@ -49,11 +49,12 @@ public class SetUp_AlphaVersion {
     }
 
     protected static Product initializeProduct() {
+
         return new Product(prop.getProperty("product_SetUp_Name01"));
     }
 
     protected static User initializeUser() {
-        return new User(prop.getProperty("user_SetUp_Username01"), prop.getProperty("user_SetUp_Password01"));
+        return new User(prop.getProperty("user_SetUp_Username01"), prop.getProperty("user_SetUp_Password01"),prop.getProperty("txt_ShoppingSearch_Keyword"));
     }
 
     /**
@@ -74,10 +75,11 @@ public class SetUp_AlphaVersion {
     /**
      * End the activity and auto close the website.
      */
+    /**
     @AfterMethod
     public static void tearDown() {
         driver.quit();
-    }
+    }*/
 
     /**
      * Verify that current testcase is passed or failed.
@@ -87,6 +89,7 @@ public class SetUp_AlphaVersion {
      * @param expected expected result.
      * @param errorMessage error message will be show if testcase is failed.
      */
+    /**
     protected static void verificationPoint(Object actual, Object expected, String errorMessage) {
         try {
             assertEquals(actual, expected, errorMessage);
@@ -94,5 +97,5 @@ public class SetUp_AlphaVersion {
         } catch (AssertionError assertionError) {
             assertionError.printStackTrace();
         }
-    }
+    }*/
 }

@@ -101,7 +101,7 @@ public class Shopping_ManageBasket_Action {
         }
     }
 
-    public static <limit> void CheckTotalPrice(WebDriver driver) throws ParseException {
+    public static void CheckTotalPrice(WebDriver driver) throws ParseException {
         driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
 
             List ProductList = driver.findElements(By.xpath("//div[@id=\"view_cart\"]/table/tbody/tr/td/img"));

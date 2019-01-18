@@ -27,8 +27,8 @@ public class Shopping_Checkout_Action {
         // Lấy tên sản phẩm ở Basket popup.
         // expected = name product on Basket popup
         // String expected = Shopping_ManageBasket_Actio.getNameProductOnBasketPopup(driver);
-        String expected = Shopping_ManageBasket_Action.getNameProductOnHomepage(driver);
-        System.out.println("Expected: " + expected);
+        //String expected = Shopping_ManageBasket_Action.getNameProductOnHomepage(driver);
+        //System.out.println("Expected: " + expected);
         // Gán cái tên sản phẩm mới lấy được ở Basket popup vào đối tượng product.
       //  product.setName(expected);
         // Chuyển qua Checkout popup

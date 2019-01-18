@@ -2,7 +2,6 @@ package Tests.Shopping_TC;
 
 import Actions.Manage_Login_Action;
 import Actions.Shopping_ManageBasket_Action;
-import Commons.SetUp;
 import Commons.SetUp_AlphaVersion;
 import Objects.Product;
 import Objects.User;

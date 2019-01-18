@@ -1,8 +1,7 @@
 package Tests.Shopping_TC;
 
+import Actions.Manage_Login_Action;
 import Actions.Shopping_Search_Action;
-import Commons.SetUp;
-
 import Commons.SetUp_AlphaVersion;
 import Objects.Product;
 import Objects.User;
@@ -15,28 +14,29 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TC_Shopping_SearchTool extends SetUp_AlphaVersion {
+
     @Test
     public void TC_Shopping_SearchTool_01() {
-        //Manage_Login_Action.Login(SetUp.driver, SetUp.user.getUsername(), SetUp.user.getPassword());
+        Manage_Login_Action.Login(SetUp_AlphaVersion.driver, initializeUser().getUsername(), initializeUser().getPassword());
 
-        Shopping_Search_Action.clickSearchBar(driver);
-        Shopping_Search_Action.CheckDisplaySearchTool(driver);
+        Shopping_Search_Action.clickSearchBar(SetUp_AlphaVersion.driver);
+        Shopping_Search_Action.CheckDisplaySearchTool(SetUp_AlphaVersion.driver);
     }
 
     @Test
     public void TC_Shopping_SearchTool_02() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(SetUp_AlphaVersion.driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_SearchTool_Page.txt_Homepage_Searchbar)));
-        Shopping_Search_Action.clickSearchBar(driver);
-        Shopping_Search_Action.CheckKeyWord(driver, SetUp.user.getKeyword());
+        Shopping_Search_Action.clickSearchBar(SetUp_AlphaVersion.driver);
+        Shopping_Search_Action.CheckKeyWord(SetUp_AlphaVersion.driver, initializeUser().getKeyword());
     }
 
     @Test
     public void TC_Shopping_SearchTool_04() {
-        WebDriverWait wait = new WebDriverWait(SetUp.driver, 10);
+        WebDriverWait wait = new WebDriverWait(SetUp_AlphaVersion.driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Shopping_SearchTool_Page.txt_Homepage_Searchbar)));
-        Shopping_Search_Action.clickSearchBar(SetUp.driver);
-        Shopping_Search_Action.SearchProductDetail(SetUp.driver, SetUp.user.getKeyword());
+        Shopping_Search_Action.clickSearchBar(SetUp_AlphaVersion.driver);
+        Shopping_Search_Action.SearchProductDetail(SetUp_AlphaVersion.driver, initializeUser().getKeyword());
     }
 
     /*public void downCrash() {
