@@ -1,7 +1,7 @@
 package Pages;
 
 public class Home_Page {
-    public static String btn_Homepage_ShoppingCart = ".//span[text()='Giỏ Hàng']";
+    public static String btn_Homepage_ShoppingCart = ".//div[@class='col-sm-4 col-md-3 col-lg-3 login-top']//span[@class='header-login'][contains(text(),'Giỏ Hàng')]";
 
     // Cái này là để thêm sản phẩm vào giỏ hàng trên homepage.
     public static String btn_Homepage_AddToBasket = ".//a[@href='product_details.php?pid=3']//following-sibling::button//span";
@@ -32,4 +32,6 @@ public class Home_Page {
     }
 
     public static String txt_Homepage_NameProduct = ".//a[@href='product_details.php?pid=3']//child::p";
+
+    public static String txt_Homepage_ProductAmountInBasket = ".//div[@class='col-sm-4 col-md-3 col-lg-3 login-top']//kbd[@class='bg-danger']/span";
 }

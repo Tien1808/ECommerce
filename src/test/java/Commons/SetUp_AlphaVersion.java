@@ -89,7 +89,6 @@ public class SetUp_AlphaVersion {
      * @param expected expected result.
      * @param errorMessage error message will be show if testcase is failed.
      */
-    /**
     protected static void verificationPoint(Object actual, Object expected, String errorMessage) {
         try {
             assertEquals(actual, expected, errorMessage);
@@ -97,5 +96,5 @@ public class SetUp_AlphaVersion {
         } catch (AssertionError assertionError) {
             assertionError.printStackTrace();
         }
-    }*/
+    }
 }
