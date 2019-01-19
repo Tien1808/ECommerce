@@ -15,6 +15,18 @@ public class Shopping_ManageBasket_Page {
 
     public static String btn_BasketPopup_BuyAnother = ".//button[@class ='btn btn-success btn-block btn-lg' and contains(.,'Mua tiếp sản phẩm')]";
 
+    public static String getXPathOfDisount (int i){
+        return ".//div[@id='view_cart']/table/tbody/tr["+i+"]/td[3]/label";
+    }
+
+    public static String getXPathOfUnit (int i){
+        return ".//div[@id='view_cart']/table/tbody/tr["+i+"]/td[5]/label";
+    }
+
+    public static String getXPathOfEstimatedSubtotal(int i){
+        return ".//div[@id='view_cart']/table/tbody/tr["+i+"]/td[6]/label";
+    }
+
     public static String getXPathOfNameProductOnBasketPopup(String nameProduct) {
         return ".//div[@id='view_cart']//td[text()='" + nameProduct + "']";
     }
